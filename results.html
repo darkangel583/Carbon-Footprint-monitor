@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">CarbonCalc</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Results Section -->
+    <section class="results">
+        <div class="container">
+            <h1>Your Carbon Footprint</h1>
+            <p>Your total carbon footprint is: <strong><span id="carbonFootprint">0.00</span> tons CO<sub>2</sub>e</strong></p>
+            <h2>Breakdown of Emissions</h2>
+            <ul>
+                <li>Energy Usage: <span id="energyFootprint">0.00</span> tons CO<sub>2</sub>e</li>
+                <li>Transportation: <span id="transportFootprint">0.00</span> tons CO<sub>2</sub>e</li>
+                <li>Waste: <span id="wasteFootprint">0.00</span> tons CO<sub>2</sub>e</li>
+            </ul>
+            <p>Consider reducing your emissions by taking public transport, reducing energy usage, or recycling more waste!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CarbonCalc. All rights reserved.</p>
+    </footer>
+
+    <!-- Script to Display Results (Placeholder) -->
+    <script>
+        // Example of updating the result values, this would be based on calculations from the form submission
+        document.getElementById('carbonFootprint').innerText = "3.45";  // Replace with actual calculation result
+        document.getElementById('energyFootprint').innerText = "1.25";  // Example breakdown
+        document.getElementById('transportFootprint').innerText = "1.75";
+        document.getElementById('wasteFootprint').innerText = "0.45";
+    </script>
+</body>
+</html>

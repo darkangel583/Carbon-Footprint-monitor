@@ -10,10 +10,11 @@
     <!-- Header -->
     <header>
         <nav class="navbar">
-            <div class="logo">CarbonCalc</div>
+            <div class="logo">carbonix</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="budget_planner.html">Budget & AI</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -23,47 +24,116 @@
     <!-- Calculator Section -->
     <section class="calculator">
         <div class="container">
-            <h1>Carbon Footprint Calculator</h1>
+            <h1 class="title">Carbon Footprint Calculator</h1>
             <form id="carbonForm">
+
                 <!-- Energy Input -->
-                <fieldset>
+                <fieldset class="energy-usage">
                     <legend>Energy Usage</legend>
-                    <label for="electricity">Electricity Usage (kWh):</label>
-                    <input type="number" id="electricity" name="electricity" min="0" placeholder="Enter your electricity usage">
-                    
-                    <label for="gas">Gas Usage (cubic meters):</label>
-                    <input type="number" id="gas" name="gas" min="0" placeholder="Enter your gas usage">
-                    
-                    <label for="oil">Oil Usage (liters):</label>
-                    <input type="number" id="oil" name="oil" min="0" placeholder="Enter your oil usage">
+
+                    <div class="energy-inputs">
+                        <label for="electricity">Electricity Usage (kWh):</label>
+                        <input type="number" id="electricity" name="electricity" min="0" placeholder="Enter your electricity usage">
+
+                        <label for="gas">Gas Usage (cubic meters):</label>
+                        <input type="number" id="gas" name="gas" min="0" placeholder="Enter your gas usage">
+
+                        <label for="oil">Oil Usage (liters):</label>
+                        <input type="number" id="oil" name="oil" min="0" placeholder="Enter your oil usage">
+                    </div>
                 </fieldset>
 
                 <!-- Transportation Input -->
-                <fieldset>
+                <fieldset class="transportation">
                     <legend>Transportation</legend>
-                    <label for="car_miles">Car Travel (miles):</label>
-                    <input type="number" id="car_miles" name="car_miles" min="0" placeholder="Enter miles driven">
-                    
-                    <label for="flights">Flights (hours):</label>
-                    <input type="number" id="flights" name="flights" min="0" placeholder="Enter hours flown">
+
+                    <div class="transportation-inputs">
+                        <label for="car_miles">Car Travel (miles):</label>
+                        <input type="number" id="car_miles" name="car_miles" min="0" placeholder="Enter miles driven">
+
+                        <label for="flights">Flights (hours):</label>
+                        <input type="number" id="flights" name="flights" min="0" placeholder="Enter hours flown">
+                    </div>
                 </fieldset>
 
-                <!-- Waste Input -->
-                <fieldset>
+                <!-- Waste Management Input -->
+                <fieldset class="waste-management">
                     <legend>Waste Management</legend>
-                    <label for="waste">Waste (kilograms per week):</label>
-                    <input type="number" id="waste" name="waste" min="0" placeholder="Enter weekly waste">
+
+                    <div class="waste-inputs">
+                        <label for="waste">Waste (kilograms per week):</label>
+                        <input type="number" id="waste" name="waste" min="0" placeholder="Enter weekly waste">
+                    </div>
+                </fieldset>
+
+                <!-- Secondary Carbon Footprint Section -->
+                <fieldset class="secondary-footprint">
+                    <legend>Secondary Carbon Footprint</legend>
+
+                    <!-- Currency Selection -->
+                    <label for="currency">Choose your currency:</label>
+                    <select id="currency" name="currency">
+                        <option value="USD">$ USD</option>
+                        <option value="EUR">€ EUR</option>
+                        <option value="GBP">£ GBP</option>
+                        <option value="INR">₹ INR</option>
+                    </select>
+
+                    <!-- Spending Categories - Line by Line -->
+                    <div class="spending-inputs">
+                        <label for="food">Food and drink products:</label>
+                        <input type="number" id="food" name="food" min="0" placeholder="$ per year">
+
+                        <label for="pharma">Pharmaceuticals:</label>
+                        <input type="number" id="pharma" name="pharma" min="0" placeholder="$ per year">
+
+                        <label for="clothes">Clothes, textiles and shoes:</label>
+                        <input type="number" id="clothes" name="clothes" min="0" placeholder="$ per year">
+
+                        <label for="paper">Paper-based products (e.g., books, magazines):</label>
+                        <input type="number" id="paper" name="paper" min="0" placeholder="$ per year">
+
+                        <label for="electronics">Computers and IT equipment:</label>
+                        <input type="number" id="electronics" name="electronics" min="0" placeholder="$ per year">
+
+                        <label for="media">Television, radio and phone (equipment):</label>
+                        <input type="number" id="media" name="media" min="0" placeholder="$ per year">
+
+                        <label for="vehicles">Motor vehicles (excluding fuel costs):</label>
+                        <input type="number" id="vehicles" name="vehicles" min="0" placeholder="$ per year">
+
+                        <label for="furniture">Furniture and other manufactured goods:</label>
+                        <input type="number" id="furniture" name="furniture" min="0" placeholder="$ per year">
+
+                        <label for="hospitality">Hotels, restaurants, and pubs:</label>
+                        <input type="number" id="hospitality" name="hospitality" min="0" placeholder="$ per year">
+
+                        <label for="phone_costs">Phone costs (calls):</label>
+                        <input type="number" id="phone_costs" name="phone_costs" min="0" placeholder="$ per year">
+
+                        <label for="finance">Banking and finance (mortgage/loan interest):</label>
+                        <input type="number" id="finance" name="finance" min="0" placeholder="$ per year">
+
+                        <label for="insurance">Insurance:</label>
+                        <input type="number" id="insurance" name="insurance" min="0" placeholder="$ per year">
+
+                        <label for="education">Education:</label>
+                        <input type="number" id="education" name="education" min="0" placeholder="$ per year">
+
+                        <label for="recreation">Recreational, cultural, and sporting activities:</label>
+                        <input type="number" id="recreation" name="recreation" min="0" placeholder="$ per year">
+                    </div>
                 </fieldset>
 
                 <!-- Submit Button -->
-                <button type="submit" class="cta-button">Calculate</button>
+                <button type="submit" class="cta-button">Estimate</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 CarbonCalc. All rights reserved.</p>
+        <p>&copy; 2024 Carbonix. All rights reserved.</p>
     </footer>
 
     <!-- Script to Handle Form Submission (Placeholder) -->

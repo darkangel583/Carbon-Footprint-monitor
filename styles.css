@@ -1,4 +1,8 @@
 /* General Styles */
+a {
+    text-decoration: none;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -21,6 +25,7 @@ body {
     list-style: none;
     display: flex;
     gap: 1rem;
+    
 }
 
 .nav-links a {
@@ -41,23 +46,6 @@ body {
 
 .hero-content h1 {
     font-size: 3rem;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    margin-top: 1rem;
-    color: #fff;
-    background: #28a745;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: background 0.3s;
-}
-
-.cta-button:hover {
-    background: #218838;
 }
 
 /* Introduction Section */
@@ -118,4 +106,241 @@ footer {
 .footer-links a {
     color: #fff;
     text-decoration: none;
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.tab-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #218838;
+}
+
+.tab-button.active {
+    background-color: #fff;
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.budget-tracker {
+    margin-top: 1rem;
+}
+
+.recommendation-box {
+    margin-top: 1rem;
+}
+
+.recommendation-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recommendation-box li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+/* Logo Styles */
+.logo {
+    font-family: 'Montserrat', sans-serif; /* Optional: Use a modern font */
+    font-size: 1.8rem; /* Larger size */
+    font-weight: 700;  /* Bold */
+    color: #f5f5f5;    /* Contrasting color to stand out */
+    text-transform: uppercase; /* Makes the logo more distinct */
+    letter-spacing: 1px; /* Adds spacing between letters */
+}
+
+
+
+
+.secondary-footprint {
+    padding: 1.5rem;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+}
+
+.secondary-footprint legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.spending-inputs label {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.spending-inputs input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.spending-inputs select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+fieldset {
+    padding: 1.5rem;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+}
+
+fieldset legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Common Input Field Styling */
+fieldset label {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+fieldset input, fieldset select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+.title {
+    text-align: center;
+    margin-bottom: 2rem; /* Adds some space below the title */
+    font-size: 2.5rem;   /* You can adjust the font size to your liking */
+    font-weight: bold;   /* Make it bold for emphasis */
+}
+
+/* Contact Section Styles */
+/* Contact Section Styles */
+.contact {
+    padding: 2rem;
+    background-color: #f7f7f7;
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888;
+}
+
+/* Increase the size of the Message textarea */
+.contact-form textarea {
+    height: 250px;
+    resize: none; /* Prevents resizing */
+}
+
+/* Submit Button */
+.cta-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+
+/* General styling for container to center the form */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
 }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner & AI Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">carbonix</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="budget_planner.html">Budget & AI</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-header">
+                <h1>Carbon Budget Planner & AI-Based Recommendations</h1>
+                <p>Manage your carbon emissions target and receive personalized recommendations on how to lower your footprint.</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('budgetPlanner')">Budget Planner</button>
+                <button class="tab-button" onclick="openTab('aiRecommendations')">AI Recommendations</button>
+            </div>
+
+            <!-- Budget Planner Section -->
+            <div id="budgetPlanner" class="tab-content active">
+                <h2>Carbon Budget Planner</h2>
+                <p>Set and track your carbon emission goals for the year or month.</p>
+                
+                <div class="budget-form">
+                    <label for="carbon-target">Set Your Carbon Footprint Target (kg CO2/year):</label>
+                    <input type="number" id="carbon-target" placeholder="e.g., 5000">
+                    <button class="cta-button" onclick="setBudget()">Set Budget</button>
+                </div>
+
+                <div class="budget-tracker">
+                    <h3>Your Progress</h3>
+                    <p>Current emissions: <span id="current-emissions">0</span> kg CO2</p>
+                    <p>Target emissions: <span id="target-emissions">5000</span> kg CO2</p>
+                    <progress id="emissions-progress" value="0" max="5000"></progress>
+                </div>
+            </div>
+
+            <!-- AI Recommendations Section -->
+            <div id="aiRecommendations" class="tab-content">
+                <h2>AI-Based Recommendations</h2>
+                <p>Receive personalized suggestions based on your activities and carbon footprint data.</p>
+
+                <div class="recommendation-box">
+                    <ul id="recommendations-list">
+                        <li>Switch to energy-efficient appliances.</li>
+                        <li>Carpool to reduce travel emissions.</li>
+                        <!-- These would be generated dynamically by AI -->
+                    </ul>
+                </div>
+                <button class="cta-button" onclick="fetchRecommendations()">Get New Recommendations</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Carbonix. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Tabs and Budget Setting -->
+    <script>
+        function openTab(tabName) {
+            let tabs = document.getElementsByClassName("tab-content");
+            let buttons = document.getElementsByClassName("tab-button");
+
+            // Hide all tabs
+            for (let tab of tabs) {
+                tab.classList.remove("active");
+            }
+
+            // Deactivate all buttons
+            for (let btn of buttons) {
+                btn.classList.remove("active");
+            }
+
+            // Show the current tab and highlight the button
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        function setBudget() {
+            let target = document.getElementById("carbon-target").value;
+            document.getElementById("target-emissions").textContent = target;
+            document.getElementById("emissions-progress").max = target;
+        }
+
+        function fetchRecommendations() {
+            const recommendations = [
+                "Switch to a plant-based diet.",
+                "Install solar panels for renewable energy.",
+                "Use public transport instead of personal cars."
+            ];
+
+            const list = document.getElementById("recommendations-list");
+            list.innerHTML = "";
+            recommendations.forEach(rec => {
+                let li = document.createElement("li");
+                li.textContent = rec;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
